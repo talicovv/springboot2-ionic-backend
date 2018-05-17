@@ -2,24 +2,48 @@ package com.nelioalves.cursomc.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
+import com.nelioalves.cursomc.services.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
 	
+	@NotEmpty(message="You can't insert or update with empty!")
+	@Length(min=5, max=80, message="the length should be between 5 and 80 characters")
 	private String nome;
+	
+	@NotEmpty(message="You can't insert or update with empty!")
+	@Email(message="It isn't e-mail valid!")
 	private String email;
+	
+	@NotEmpty(message="You can't insert or update with empty!")
 	private String cpfOuCnpj;
 	private Integer tipo;
 	
-	
+	@NotEmpty(message="You can't insert or update with empty!")
 	private String logradouro;
+	
+	@NotEmpty(message="You can't insert or update with empty!")	
 	private String numero;
+	
 	private String complemento;
+	
+	@NotEmpty(message="You can't insert or update with empty!")
 	private String bairro;
+	
+	@NotEmpty(message="You can't insert or update with empty!")
 	private String cep;
 	
+	@NotEmpty(message="You can't insert or update with empty!")
 	private String telefone1;
+	
 	private String telefone2;
 	private String telefone3;
 	
