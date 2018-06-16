@@ -61,8 +61,6 @@ public class Cliente implements Serializable {
 	public Cliente () {
 		addPerfil(Perfil.CLIENTE);		
 	}
-	
-	private String imageURL;
 
 	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo, String senha) {
 		super();
@@ -154,14 +152,6 @@ public class Cliente implements Serializable {
 
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
-	}
-	
-	public String getImageURL() {
-		return imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
 	}
 
 	@Override
