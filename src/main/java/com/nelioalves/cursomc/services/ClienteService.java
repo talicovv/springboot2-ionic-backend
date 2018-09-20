@@ -148,7 +148,7 @@ public class ClienteService {
 				objDto.getEmail(),
 				objDto.getCpfOuCnpj(),
 				TipoCliente.toEnum(objDto.getTipo()),
-				pe.encode(objDto.getCep())
+				pe.encode(objDto.getSenha())
 				);
 		Cidade cid = new Cidade(objDto.getCidadeId(), null, null);
 		
